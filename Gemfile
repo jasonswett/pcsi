@@ -21,7 +21,8 @@ group :assets do
 end
 
 group :test, :development do
-  gem "cucumber-rails", "~> 1.3.0"
+  gem "cucumber-rails", "~> 1.3.0", require: false
+  gem "database_cleaner"
   gem "rspec-rails", "~> 2.11.4"
   gem "factory_girl", "~> 4.1.0"
 end
