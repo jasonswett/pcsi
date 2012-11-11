@@ -23,4 +23,12 @@ describe Product do
     before { @product.price_per_unit = nil }
     it { should_not be_valid }
   end
+
+  describe "when code is not unique" do
+    before do
+      @other_product = FactoryGirl.create(:product, :code => "3249")
+      @product.code = @other_product.code
+    end
+    it { should_not be_valid }
+  end
 end
