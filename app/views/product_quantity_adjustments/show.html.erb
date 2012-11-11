@@ -1,0 +1,15 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Product:</b>
+  <%= @product_quantity_adjustment.product_id %>
+</p>
+
+<p>
+  <b>Quantity:</b>
+  <%= @product_quantity_adjustment.quantity %>
+</p>
+
+
+<%= link_to 'Edit', edit_product_quantity_adjustment_path(@product_quantity_adjustment) %> |
+<%= link_to 'Back', product_quantity_adjustments_path %>

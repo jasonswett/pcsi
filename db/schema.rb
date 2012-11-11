@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121109024217) do
+ActiveRecord::Schema.define(:version => 20121111161615) do
 
   create_table "product", :force => true do |t|
     t.string   "code",            :null => false
@@ -22,5 +22,14 @@ ActiveRecord::Schema.define(:version => 20121109024217) do
     t.datetime "created_at",      :null => false
     t.datetime "updated_at",      :null => false
   end
+
+  create_table "product_quantity_adjustment", :force => true do |t|
+    t.integer  "product_id", :null => false
+    t.integer  "quantity",   :null => false
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  add_foreign_key "product_quantity_adjustment", "product", :name => "product_quantity_adjustment_product_id_fk"
 
 end

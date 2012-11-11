@@ -1,0 +1,2 @@
+module ProductQuantityAdjustmentsHelper
+end

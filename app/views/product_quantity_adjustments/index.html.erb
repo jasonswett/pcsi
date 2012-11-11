@@ -1,0 +1,25 @@
+<h1>Listing product_quantity_adjustments</h1>
+
+<table>
+  <tr>
+    <th>Product</th>
+    <th>Quantity</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @product_quantity_adjustments.each do |product_quantity_adjustment| %>
+  <tr>
+    <td><%= product_quantity_adjustment.product_id %></td>
+    <td><%= product_quantity_adjustment.quantity %></td>
+    <td><%= link_to 'Show', product_quantity_adjustment %></td>
+    <td><%= link_to 'Edit', edit_product_quantity_adjustment_path(product_quantity_adjustment) %></td>
+    <td><%= link_to 'Destroy', product_quantity_adjustment, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Product quantity adjustment', new_product_quantity_adjustment_path %>

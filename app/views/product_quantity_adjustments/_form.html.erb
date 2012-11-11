@@ -1,0 +1,25 @@
+<%= form_for(@product_quantity_adjustment) do |f| %>
+  <% if @product_quantity_adjustment.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@product_quantity_adjustment.errors.count, "error") %> prohibited this product_quantity_adjustment from being saved:</h2>
+
+      <ul>
+      <% @product_quantity_adjustment.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :product_id %><br />
+    <%= f.select :product_id, options_from_collection_for_select(Product.all, :id, :name) %>
+  </div>
+  <div class="field">
+    <%= f.label :quantity %><br />
+    <%= f.text_field :quantity %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

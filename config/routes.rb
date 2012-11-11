@@ -1,4 +1,6 @@
 Pcsi::Application.routes.draw do
+  resources :product_quantity_adjustments
+
   resources :products
 
   # The priority is based upon order of creation:
