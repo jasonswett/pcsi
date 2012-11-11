@@ -1,6 +1,6 @@
 Given /^I have a product with a quantity of (\d+)$/ do |quantity|
   product = FactoryGirl.create(:product)
-  product.set_quantity_to(quantity)
+  product.update_quantity(quantity)
 end
 
 When /^I change the quantity to (\d+)$/ do |arg1|

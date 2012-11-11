@@ -2,11 +2,12 @@
 
 <table>
   <tr>
-    <th>Code</th>
     <th>Name</th>
+    <th>Code</th>
     <th>Description</th>
     <th>Unit of measure</th>
     <th>Price per unit</th>
+    <th>Number in stock</th>
     <th></th>
     <th></th>
     <th></th>
@@ -14,11 +15,12 @@
 
 <% @products.each do |product| %>
   <tr>
-    <td><%= product.code %></td>
     <td><%= product.name %></td>
+    <td><%= product.code %></td>
     <td><%= product.description %></td>
     <td><%= product.unit_of_measure %></td>
     <td><%= product.price_per_unit %></td>
+    <td><%= product.quantity %></td>
     <td><%= link_to 'Show', product %></td>
     <td><%= link_to 'Edit', edit_product_path(product) %></td>
     <td><%= link_to 'Destroy', product, method: :delete, data: { confirm: 'Are you sure?' } %></td>
