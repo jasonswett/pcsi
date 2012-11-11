@@ -17,7 +17,7 @@ ActiveRecord::Schema.define(:version => 20121111161615) do
     t.string   "code",            :null => false
     t.string   "name",            :null => false
     t.text     "description"
-    t.integer  "unit_of_measure"
+    t.string   "unit_of_measure"
     t.decimal  "price_per_unit",  :null => false
     t.datetime "created_at",      :null => false
     t.datetime "updated_at",      :null => false
