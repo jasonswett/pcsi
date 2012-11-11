@@ -14,13 +14,16 @@
   </tr>
 
 <% @products.each do |product| %>
-  <tr>
+  <tr data-product-id="<%= product.id %>" data-previous-quantity="<%= product.quantity %>">
     <td><%= product.name %></td>
     <td><%= product.code %></td>
     <td><%= product.description %></td>
     <td><%= product.unit_of_measure %></td>
     <td><%= product.price_per_unit %></td>
-    <td><%= product.quantity %></td>
+    <td class="editable">
+      <a href="#" class="quantity_label" id="quantity_label_<%= product.id %>"><%= product.quantity %></a>
+      <%= text_field_tag "quantity", product.quantity, :id => "quantity_input_#{product.id}" %>
+    </td>
     <td><%= link_to 'Show', product %></td>
     <td><%= link_to 'Edit', edit_product_path(product) %></td>
     <td><%= link_to 'Destroy', product, method: :delete, data: { confirm: 'Are you sure?' } %></td>
@@ -31,3 +34,9 @@
 <br />
 
 <%= link_to 'New Product', new_product_path %>
+
+<script>
+var productList = new ProductList({
+  productQuantityAdjustmentUrl: "<%= product_quantity_adjustments_url %>"
+});
+</script>

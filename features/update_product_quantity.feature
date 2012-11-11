@@ -3,6 +3,7 @@ Feature: Add Product
   Pharmacy employees
   Should be able to update product quantities
 
+  @javascript
   Scenario: I can update a product quantity
     Given I am a pharmacy employee
     And I have a product with a quantity of 100
